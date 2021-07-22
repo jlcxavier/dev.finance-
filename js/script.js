@@ -117,6 +117,7 @@ const DOM = {
         const html = `               
         <td class='description'>${transaction.description}</td>
         <td class='celular ${CSSClass}'>${amount}</td>
+        <td class='parcela'>${transaction.parcela}</td>
         <td class='date'>${transaction.date}</td>
         <td>
         <img class="cursor" onclick="Transaction.remove(${index})"src="./assets/minus.svg" alt="Remover transação">
@@ -150,6 +151,17 @@ const Utils = {
         
         return value
     },
+    formatParcela(parcela, amount) {
+        if (parcela == 1) {
+            return parcela
+            
+        } else {
+            var valorParcelado =  (amount / 100) / parcela 
+            parcela = `${parcela} x de ${valorParcelado.toFixed(2)} `
+
+            return parcela
+        }
+    },
 
     formatDate(date) {
         const splittedDate = date.split("-")
@@ -176,22 +188,25 @@ const Utils = {
 const Form = {
     description: document.querySelector('input#description'),
     amount: document.querySelector('input#amount'),
+    parcela: document.querySelector('input#parcela'),
     date: document.querySelector('input#date'),
 
     getValues() {
         return {
             description: Form.description.value,
             amount: Form.amount.value,
+            parcela: Form.parcela.value,
             date: Form.date.value,
 
         }
     },
 
     validateField() {
-        const { description, amount, date } = Form.getValues()
+        const { description, amount, parcela, date } = Form.getValues()
         
         if(description.trim() === "" ||
         amount.trim() === "" ||
+        parcela.trim() === ""||
         date.trim() === "" ) {
             throw new Error(`Por favor, preencha todos os campos.
             Pressione OK, para continuar`)
@@ -199,22 +214,25 @@ const Form = {
     },
 
     formatValues() {
-        let { description, amount, date } = Form.getValues()
+        let { description, amount, parcela, date } = Form.getValues()
 
         amount = Utils.formatAmount(amount)
+        parcela = Utils.formatParcela(parcela, amount) 
 
         date = Utils.formatDate(date)
 
         return {
             description,
             amount,
+            parcela,
             date,
         }
     },
 
     clearFields() {
         Form.description.value = ""
-        Form.amount.value = ""    
+        Form.amount.value = ""
+        Form.parcela.value = ""
         Form.date.value = ""    
     },
 

@@ -63,6 +63,7 @@
                     <tr>
                         <th>Descrição</th>
                         <th class="valor">Valor</th>
+                        <th class="parcela">Parcelas</th>
                         <th>Data</th>
                         <th></th>
                     </tr>
@@ -107,6 +108,16 @@
                            id="amount"
                            name="amount"
                            placeholder="0,00"
+                           />
+
+                           <small class='help'>Caso seja um valor único, ou seja apenas este mês selecione uma parcela.</small>
+
+                           <input 
+                           type="number" 
+                           step="1"
+                           id="parcela"
+                           name="parcela"
+                           placeholder="Número de parcelas" 
                            />
 
                            <small class='help'>Use o sinal - (negativo) para despesas e, (vírgula) para casas decimais</small>
