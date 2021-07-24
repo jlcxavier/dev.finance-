@@ -61,26 +61,26 @@
 
              <select class='direito' onchange="FilterYear.open()">
                 <option>Ano</option>
-                <option>2020</option>
-                <option>2021</option>
-                <option>2022</option>
-                <option>2023</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
             </select>
 
             <select class='direito' onchange="FilterMonth.open()">
                 <option>Mês</option>
-                <option>Janeiro</option>
-                <option>Fevereiro</option>
-                <option>Março</option>
-                <option>Abril</option>
-                <option>Maio</option>
-                <option>Junho</option>
-                <option>Julho</option>
-                <option>Agosto</option>
-                <option>Setembro</option>
-                <option>Outubro</option>
-                <option>Novembro</option>
-                <option>Dezembro</option>
+                <option value="janeiro">Janeiro</option>
+                <option value="fevereiro">Fevereiro</option>
+                <option value="marco">Março</option>
+                <option value="abril">Abril</option>
+                <option value="maio">Maio</option>
+                <option value="junho">Junho</option>
+                <option value="julho">Julho</option>
+                <option value="agosto">Agosto</option>
+                <option value="setembro">Setembro</option>
+                <option value="outubro">Outubro</option>
+                <option value="novembro">Novembro</option>
+                <option value="dezembro">Dezembro</option>
             </select>
 
            
@@ -182,8 +182,28 @@
     
     <!-- modal overlay filtro ano -->
     <div class="modal-overlay-filter-year">
-        <div class="modal-overlay-filter-year">
+        <div class="modal-filter-year">
             <a href="#" onclick="FilterYear.close()">X</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th class="valor">Valor</th>
+                        <th class="parcela">Parcelas</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td class='description'></td>
+                    <td class='celular'></td>
+                    <td class='parcela'></td>
+                    <td class='date'></td>
+                    <td>
+                    <img class="cursor" onclick="Transaction.remove(${index})"src="./assets/minus.svg" alt="Remover transação">
+                    </td>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -191,6 +211,26 @@
     <div class="modal-overlay-filter-month">
         <div class="modal-filter-month">
             <a href="#" onclick="FilterMonth.close()">X</a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th class="valor">Valor</th>
+                        <th class="parcela">Parcelas</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td class='description'></td>
+                    <td class='celular'>MÊS</td>
+                    <td class='parcela'></td>
+                    <td class='date'></td>
+                    <td>
+                    <img class="cursor" onclick="Transaction.remove(${index})"src="./assets/minus.svg" alt="Remover transação">
+                    </td>
+                </tbody>
+            </table>
         </div>
     </div>
 

@@ -306,5 +306,4 @@ const FilterMonth = {
     },
 }
 
-
 App.init()
