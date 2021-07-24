@@ -59,7 +59,7 @@
             onclick="Modal.open()" 
             class="button new esquerdo">+ Nova Transação</a>
 
-             <select class='direito'>
+             <select class='direito' onchange="FilterYear.open()">
                 <option>Ano</option>
                 <option>2020</option>
                 <option>2021</option>
@@ -67,7 +67,7 @@
                 <option>2023</option>
             </select>
 
-            <select class='direito'>
+            <select class='direito' onchange="FilterMonth.open()">
                 <option>Mês</option>
                 <option>Janeiro</option>
                 <option>Fevereiro</option>
@@ -180,6 +180,20 @@
         </div>
     </div>
     
+    <!-- modal overlay filtro ano -->
+    <div class="modal-overlay-filter-year">
+        <div class="modal-overlay-filter-year">
+            <a href="#" onclick="FilterYear.close()">X</a>
+        </div>
+    </div>
+
+    <!-- modal overlay filtro ano -->
+    <div class="modal-overlay-filter-month">
+        <div class="modal-filter-month">
+            <a href="#" onclick="FilterMonth.close()">X</a>
+        </div>
+    </div>
+
     <footer>
         <p>2021 - dev.finance$</p>
     </footer>

@@ -268,4 +268,43 @@ const App = {
     },
 }
 
+const FilterYear = {
+    open(){
+        // Abrir modal
+        // Adicionar a class active ao modal
+        document
+            .querySelector('.modal-overlay-filter-year')
+            .classList
+            .add('active');
+    },
+    close(){
+        //fechar o modal
+        //remover a class active do modal
+        document
+            .querySelector('.modal-overlay-filter-year')
+            .classList
+            .remove('active');
+    },
+}
+
+const FilterMonth = {
+    open(){
+        // Abrir modal
+        // Adicionar a class active ao modal
+        document
+            .querySelector('.modal-overlay-filter-month')
+            .classList
+            .add('active');
+    },
+    close(){
+        //fechar o modal
+        //remover a class active do modal
+        document
+            .querySelector('.modal-overlay-filter-month')
+            .classList
+            .remove('active');
+    },
+}
+
+
 App.init()
